@@ -1,13 +1,20 @@
+#!/usr/bin/env bash
+
 install_module() {
-
     local module="$1"
+    local module_file
+    module_file="$(dirname "${BASH_SOURCE[0]}")/../module/${module}.sh"
 
-    info "Installing ${module}..."
+    log_info "Installing ${module}..."
 
-    if bash "modules/${module}.sh"
-    then
-        success "${module} installed."
+    if [[ ! -f "$module_file" ]]; then
+        log_error "Module not found: ${module}"
+        return 1
+    fi
+
+    if source "$module_file"; then
+        log_success "${module} installed."
     else
-        warning "${module} failed."
+        log_warning "${module} failed."
     fi
 }
