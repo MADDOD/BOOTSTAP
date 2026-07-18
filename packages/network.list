@@ -1,0 +1,22 @@
+# Network Tools
+
+net-tools
+nmap
+tcpdump
+iftop
+iotop
+iperf3
+ethtool
+dnsutils
+traceroute
+mtr
+whois
+netcat-openbsd
+openssh-client
+openssh-server
+wireguard
+wireguard-tools
+network-manager-openvpn
+network-manager-openvpn-gnome
+avahi-utils
+arp-scan
